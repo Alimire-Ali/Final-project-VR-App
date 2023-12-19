@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.InputSystem;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Interactionforsphere : MonoBehaviour
 {
     public Rigidbody Ball;
     bool fire = false;
