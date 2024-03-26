@@ -9,4 +9,9 @@ public class MenuEventHandler : MonoBehaviour
     {
         SceneManager.LoadScene(levelName);
     }
+
+    public void quitGame()
+    {
+        Application.Quit();
+    }
 }
