@@ -18,7 +18,6 @@ public class GameMechanic : MonoBehaviour
     public float gameTime = 30; // time of the game in seconds
     static public int score = 0; // start of the score
 
-    // public AudioClip gunSound;
 
 
 
@@ -63,15 +62,12 @@ public class GameMechanic : MonoBehaviour
 
         // makes the right trigger button spawn a cloned ball that has a rigidbody so that it can collide with other objects, at the specific location on the right controller, 
         // while also going towards the Z axis at the given velocity.
-        if(triggerRight > 0.9f && fire == false)
+        if(triggerRight > 0.8f && fire == false)
         {
             fire = true;
 
             Rigidbody clone = Instantiate(Ball, transform.position, transform.rotation) as Rigidbody;
             clone.velocity = transform.TransformDirection(new Vector3(0,0,velocity));
-
-            // AudioSource.PlayClipAtPoint(gunSound, transform.position);
-            
             Destroy(clone.gameObject,3);
 
 
