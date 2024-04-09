@@ -7,11 +7,6 @@ using TMPro;
 public class PickUpBasketball : MonoBehaviour
 {
 
-    // [Header("Game Score")]
-    // public TMP_Text gameData;
-    // public float gameTime = 30; // time of the game in seconds
-    // static public int score = 0; // start of the score
-
     List<Vector3> trackingPos = new List<Vector3>();
     public float velocity = 1000f;
 
@@ -81,11 +76,4 @@ public class PickUpBasketball : MonoBehaviour
             Debug.Log("trigger clicked");
         }
     }
-
-    // void updateGUI()
-    // {
-    //     string buffer = "Time: " + gameTime.ToString("00.0")
-    //     + "\nScore: " + score;
-    //     gameData.text = buffer; 
-    // }
  }

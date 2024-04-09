@@ -16,7 +16,7 @@ public class GameMechanic : MonoBehaviour
     public float spawned = 15; //for spawning targets
     public float velocity = 50; //speed of object fired
     public float gameTime = 30; // time of the game in seconds
-    static public int score = 0; // start of the score
+    static public int triggerScore = 0; // start of the triggerScore
 
 
 
@@ -33,16 +33,17 @@ public class GameMechanic : MonoBehaviour
             Instantiate(myObjects[randomIndex], randomSpawning, Quaternion.Euler(90,0,0));
             spawned--;
         }
+        triggerScore = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //making the game end using either game time or game score.
+        //making the game end using either game time or game Score.
         gameTime -= Time.deltaTime;
-        if (gameTime < 0 || score > 149)
+        if (gameTime < 0 || triggerScore > 149)
         {
-            SceneManager.LoadScene("TargetShootMenu");
+            SceneManager.LoadScene("TargetShootEnd");
         }
 
 
@@ -90,7 +91,7 @@ public class GameMechanic : MonoBehaviour
     void updateGUI()
     {
         string buffer = "Time: " + gameTime.ToString("00.0")
-        + "\nScore: " + score;
+        + "\nScore: " + triggerScore;
         gameData.text = buffer; 
     }
 }

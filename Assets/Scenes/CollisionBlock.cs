@@ -37,6 +37,6 @@ public class CollisionBlock : MonoBehaviour
 
         Destroy(gameObject);
         Destroy(collision.gameObject);
-        GameMechanic.score += 10;
+        GameMechanic.triggerScore += 10;
     }
 }

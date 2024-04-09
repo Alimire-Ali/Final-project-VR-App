@@ -5,24 +5,30 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: feec53fbe1fb376468e7c1114d975c62
-  - enabled: 0
-    path: Assets/Scenes/TargetShoot.unity
-    guid: b1e566ec12d75724eb53a2c850155038
-  - enabled: 0
-    path: Assets/Scenes/HoopShoot.unity
-    guid: 8368e7a9a176cc04087ef34606e0e2ef
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/TargetShootMenu.unity
     guid: 74702ffb6dc88194ead0d3cd56a4403b
   - enabled: 1
-    path: Assets/Scenes/DrumKit.unity
-    guid: dada8cc2b5726f44887cc6978ec82ae1
-  - enabled: 0
     path: Assets/Scenes/HoopShootMenu.unity
     guid: d5663fb4d6126b24a9068b0e292219d4
+  - enabled: 1
+    path: Assets/Scenes/DrumKit.unity
+    guid: dada8cc2b5726f44887cc6978ec82ae1
+  - enabled: 1
+    path: Assets/Scenes/TargetShoot.unity
+    guid: b1e566ec12d75724eb53a2c850155038
+  - enabled: 1
+    path: Assets/Scenes/HoopShoot.unity
+    guid: 8368e7a9a176cc04087ef34606e0e2ef
+  - enabled: 1
+    path: Assets/Scenes/TargetShootEnd.unity
+    guid: 9826793200270f240a8430cfb8bd290a
+  - enabled: 1
+    path: Assets/Scenes/HoopShootEnd.unity
+    guid: e769f01294bff1047b8583d13fce9525
   - enabled: 0
     path: Assets/Scenes/testScene.unity
     guid: 33a2f28a6de81994494ce8dbd6c90bb8

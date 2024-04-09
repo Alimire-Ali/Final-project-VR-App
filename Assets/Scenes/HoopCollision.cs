@@ -14,13 +14,14 @@ public class HoopCollision : MonoBehaviour
     [Header("Game Score")]
     public TMP_Text gameData;
     public float gameTime = 30; // time of the game in seconds
-    static public int score = 0; // start of the score
+    static public int hoopScore = 0; // start of the score
 
     public GameObject Basketball;
 
     // Start is called before the first frame update
     void Start()
     {
+        hoopScore = 0;
 
     }
 
@@ -30,7 +31,7 @@ public class HoopCollision : MonoBehaviour
         gameTime-= Time.deltaTime;
         if(gameTime < 0)
         {
-            SceneManager.LoadScene("HoopShootMenu");
+            SceneManager.LoadScene("HoopShootEnd");
         }
 
         bool buttonStart = OVRInput.Get(OVRInput.RawButton.Start);
@@ -47,7 +48,7 @@ public class HoopCollision : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Destroy(collision.gameObject);
-        score += 10;
+        hoopScore += 10;
     }
 
     public void BallRespawn()
@@ -60,7 +61,7 @@ public class HoopCollision : MonoBehaviour
     void updateGUI()
     {
         string buffer = "Time: " + gameTime.ToString("00.0")
-        + "\nScore: " + score;
+        + "\nScore: " + hoopScore;
         gameData.text = buffer; 
     }
 }
