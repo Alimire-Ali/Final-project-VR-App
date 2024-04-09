@@ -23,6 +23,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/HoopShootMenu.unity
     guid: d5663fb4d6126b24a9068b0e292219d4
+  - enabled: 0
+    path: Assets/Scenes/testScene.unity
+    guid: 33a2f28a6de81994494ce8dbd6c90bb8
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 2ca0d1fa306481f48b75e1bb1049ea5b, type: 2}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 888118410dac9704298067c53124863e, type: 2}
