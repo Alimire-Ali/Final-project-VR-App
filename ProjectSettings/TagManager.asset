@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RightHand
   - DrumStickHead
+  - LeftHand
   layers:
   - Default
   - TransparentFX

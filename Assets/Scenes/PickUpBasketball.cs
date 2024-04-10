@@ -27,13 +27,6 @@ public class PickUpBasketball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        // gameTime-= Time.deltaTime;
-        // if(gameTime < 0)
-        // {
-        //     SceneManager.LoadScene("Menu");
-        // }
-
         if (pickedUp == true)
         {
             bb.useGravity = false;
@@ -48,8 +41,9 @@ public class PickUpBasketball : MonoBehaviour
             trackingPos.Add(transform.position);
 
             float triggerRight = OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger);
+            float triggerLeft = OVRInput.Get(OVRInput.RawAxis1D.LIndexTrigger);
 
-            if (triggerRight < 0.1f)
+            if (triggerRight < 0.1f && triggerLeft < 0.1f)
             {
                 pickedUp = false;
                 Vector3 direction = trackingPos[trackingPos.Count - 1] - trackingPos[0].normalized;
@@ -70,6 +64,14 @@ public class PickUpBasketball : MonoBehaviour
     {
         float triggerRight = OVRInput.Get(OVRInput.RawAxis1D.RIndexTrigger);
         if (other.gameObject.CompareTag("RightHand") && triggerRight > 0.8f)
+        {
+            pickedUp = true;
+            parentHand = other.gameObject;
+            Debug.Log("trigger clicked");
+        }
+
+        float triggerLeft = OVRInput.Get(OVRInput.RawAxis1D.LIndexTrigger);
+        if (other.gameObject.CompareTag("LeftHand") && triggerLeft > 0.8f)
         {
             pickedUp = true;
             parentHand = other.gameObject;

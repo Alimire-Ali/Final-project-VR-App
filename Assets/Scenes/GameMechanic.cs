@@ -11,7 +11,8 @@ public class GameMechanic : MonoBehaviour
 
     public GameObject[] myObjects;
 
-    public Rigidbody Ball; //what makes the object thats fired
+    public Rigidbody BallR; //what makes the object thats fired
+    public Rigidbody BallL; //what makes the object thats fired
 
     public float spawned = 15; //for spawning targets
     public float velocity = 50; //speed of object fired
@@ -21,7 +22,8 @@ public class GameMechanic : MonoBehaviour
 
 
 
-    bool fire = false;
+    bool fireR = false;
+    bool fireL = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,22 +65,33 @@ public class GameMechanic : MonoBehaviour
 
         // makes the right trigger button spawn a cloned ball that has a rigidbody so that it can collide with other objects, at the specific location on the right controller, 
         // while also going towards the Z axis at the given velocity.
-        if(triggerRight > 0.8f && fire == false)
+        if(triggerRight > 0.8f && fireR == false)
         {
-            fire = true;
+            fireR = true;
 
-            Rigidbody clone = Instantiate(Ball, transform.position, transform.rotation) as Rigidbody;
+            Rigidbody clone = Instantiate(BallR, transform.position, transform.rotation) as Rigidbody;
             clone.velocity = transform.TransformDirection(new Vector3(0,0,velocity));
             Destroy(clone.gameObject,3);
-
-
         }
 
+        if(triggerLeft > 0.8f && fireL == false)
+        {
+            fireL = true;
+
+            Rigidbody clone = Instantiate(BallL, transform.position, transform.rotation) as Rigidbody;
+            clone.velocity = transform.TransformDirection(new Vector3(0,0,velocity));
+            Destroy(clone.gameObject,3);
+        }
 
         // making sure it doesnt spam the spawning of the ball, making it seperate clicks per spawn.
-        if (fire == true && triggerRight<0.1f) 
+        if (fireR == true && triggerRight<0.1f) 
         {
-            fire = false;
+            fireR = false;
+        }
+
+        if (fireL == true && triggerLeft<0.1f) 
+        {
+            fireL = false;
         }
 
         // keeps the gui updated

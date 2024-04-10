@@ -18,6 +18,8 @@ public class HoopCollision : MonoBehaviour
 
     public GameObject Basketball;
 
+    public GameObject particles;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,7 @@ public class HoopCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        GameObject clone = Instantiate(particles, transform.position, transform.rotation);
         Destroy(collision.gameObject);
         hoopScore += 10;
     }
