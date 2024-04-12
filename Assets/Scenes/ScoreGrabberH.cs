@@ -17,7 +17,7 @@ public class ScoreGrabberH : MonoBehaviour
     }
     void Update()
     {
-        score = HoopCollision.hoopScore;
+        score = HoopCollision.hoopScore; // gets the score from the game and adds it to this script
 
         updateGUI();
 
@@ -33,7 +33,7 @@ public class ScoreGrabberH : MonoBehaviour
     void updateGUI()
     {
 
-        string buffer = "Final Score: " + score + "\nWant to Play again? ";
+        string buffer = "Final Score: " + score + "\nWant to Play again? "; // displays score and allows user to go back to the menu
         gameData.text = buffer; 
     }
 }

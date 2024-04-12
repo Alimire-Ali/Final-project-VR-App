@@ -17,7 +17,7 @@ public class TrackSpeed : MonoBehaviour
     // Update is called on the physics update. dependant on fps
     void FixedUpdate()
     {
-        speed = (((transform.position - lastPos).magnitude) / Time.deltaTime);
-        lastPos = transform.position;
+        speed = (((transform.position - lastPos).magnitude) / Time.deltaTime); // uses the position and the last position while dividing it by the time between them
+        lastPos = transform.position; //sets the position after
     }
 }

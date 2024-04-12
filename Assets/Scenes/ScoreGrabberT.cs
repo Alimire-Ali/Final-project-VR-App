@@ -18,7 +18,7 @@ public class ScoreGrabberT : MonoBehaviour
     }
     void Update()
     {
-        score = GameMechanic.triggerScore;
+        score = GameMechanic.triggerScore; // gets the score from the game and adds it to this script
 
         updateGUI();
 
@@ -34,7 +34,7 @@ public class ScoreGrabberT : MonoBehaviour
     void updateGUI()
     {
 
-        string buffer = "Final Score: " + score + "\nWant to Play again? ";
+        string buffer = "Final Score: " + score + "\nWant to Play again? "; // allows the user to see their score and give them the option to go back to the menu or quit
         gameData.text = buffer; 
     }
 }
